@@ -11,7 +11,14 @@ def add_product(name, price, quantity):
     print("Đã nhập hàng thành công.")
     
 def view_inventory():
-    print("Chức năng xem tồn kho chưa được cài đặt.")
+    if not products:
+        print("Kho hiện đang trống.")
+        return
+
+    print("\n--- DANH SÁCH SẢN PHẨM ---")
+    for p in products:
+        print(f"{p['name']} - Giá: {p['price']} - SL: {p['qty']}")
+
 
 def check_low_stock():
     print("Chức năng cảnh báo hết hàng chưa được cài đặt.")
