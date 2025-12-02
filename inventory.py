@@ -21,7 +21,16 @@ def view_inventory():
 
 
 def check_low_stock():
-    print("Chức năng cảnh báo hết hàng chưa được cài đặt.")
+    low_items = [p for p in products if p['qty'] < 5]
+
+    if not low_items:
+        print("Không có sản phẩm nào sắp hết hàng.")
+        return
+
+    print("\n--- CẢNH BÁO HẾT HÀNG ---")
+    for p in low_items:
+        print(f"{p['name']} - SL còn lại: {p['qty']}")
+
 
 def main():
     while True:
