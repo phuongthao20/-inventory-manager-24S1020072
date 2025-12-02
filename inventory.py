@@ -1,9 +1,15 @@
 # Danh sách lưu trữ sản phẩm
 products = []
 
-def add_product():
-    print("Chức năng nhập hàng chưa được cài đặt.")
-
+def add_product(name, price, quantity):
+    product = {
+        "name": name,
+        "price": price,
+        "qty": quantity
+    }
+    products.append(product)
+    print("Đã nhập hàng thành công.")
+    
 def view_inventory():
     print("Chức năng xem tồn kho chưa được cài đặt.")
 
